@@ -2,7 +2,7 @@ package com.horn.blockchain.controller;
 
 import com.horn.base.Result;
 import com.horn.blockchain.util.Results;
-import com.horn.blockchain.service;
+import com.horn.blockchain.services.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

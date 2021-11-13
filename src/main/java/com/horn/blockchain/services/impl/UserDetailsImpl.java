@@ -1,7 +1,7 @@
-package com.horn.blockchain.mapper.impl;
+package com.horn.blockchain.services.impl;
 
 import com.horn.base.Result;
-import com.horn.blockchain.mapper.UserDetailsService;
+import com.horn.blockchain.services.UserDetailsService;
 import com.horn.blockchain.model.UserDetails;
 import com.horn.blockchain.util.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-/**
- * @Author: horn
- * @Description:
- * @Date: 2021/10/9 20:07
- */
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsImpl implements UserDetailsService {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -56,8 +51,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
-    public Result registerUser(Map<String, String> message){
-        try{
+    public Result registerUser(Map<String, String> message) {
+        try {
             UserDetails userDetails = new UserDetails();
             userDetails.setName(message.get("name"));
             userDetails.setPassword(message.get("pass"));
@@ -68,7 +63,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             } else {
                 return Results.failure("userDetails is null");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return Results.failure(e.getMessage());
         }
 
