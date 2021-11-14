@@ -53,6 +53,7 @@ public class UserDetailsImpl implements UserDetailsService {
     @Override
     public Result registerUser(Map<String, String> message) {
         try {
+            System.out.println("yes run mongo");
             UserDetails userDetails = new UserDetails();
             userDetails.setName(message.get("name"));
             userDetails.setPassword(message.get("pass"));
