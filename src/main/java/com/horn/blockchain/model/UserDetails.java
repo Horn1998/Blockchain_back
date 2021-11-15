@@ -1,10 +1,12 @@
 package com.horn.blockchain.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-// @Document的collection属性设置的是在mongo库中的集合名称
-@Document(collection = "register")
-public class UserDetails {
+import java.io.Serializable;
+
+@Document(collection = "UserDetails")
+public class UserDetails implements Serializable {
 
     private String name;
     private String password;

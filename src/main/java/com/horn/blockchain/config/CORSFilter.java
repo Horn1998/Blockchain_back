@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+//解决跨域问题
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
 public class CORSFilter implements Filter {
